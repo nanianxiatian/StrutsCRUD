@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+ <constant name="struts.devMode" value="true"/>
+    <constant name="struts.i18n.encoding" value="utf-8" />
+     <package name="Book" namespace="/" extends="struts-default" >
+	<action name="BookList" class="com.sz.action.BookAction" method="BookList">
+		<result name="success">/BookManager.jsp</result>
+	</action>
+	<action name="BookAdd" class="com.sz.action.BookAction" method="BookAdd">
+		<result name="success">/Success.jsp</result>
+		<result name="fail">/Error.jsp</result>
+	</action>
+	<action name="BookDelete" class="com.sz.action.BookAction" method="BookDelete">
+		<result name="success" type="redirectAction">BookList</result>
+	</action>
+	<action name="BookUpdateLoad" class="com.sz.action.BookAction" method="BookUpdateLoad">
+		<result name="success">/BookUpdate.jsp</result>
+	</action>
+	<action name="BookUpdate" class="com.sz.action.BookAction" method="BookUpdate">
+		<result name="success">/Success.jsp</result>
+		<result name="fail">/Error.jsp</result>
+	</action>
+     </package>
+</struts>    
